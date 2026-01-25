@@ -1,5 +1,25 @@
 <!DOCTYPE html>
 <html>
+<!-- Rolling Headshots -->
+<div class="headshot-container">
+  <div class="headshot-slideshow">
+    <div class="headshot-slide active">
+      <img src="/images/CHINNY.jpg" alt="Ajay Damodaran headshot 1">
+    </div>
+    <div class="headshot-slide">
+      <img src="/images/LISTENING.jpg" alt="Ajay Damodaran headshot 2">
+    </div>
+    <div class="headshot-slide">
+      <img src="/images/READING.jpg" alt="Ajay Damodaran headshot 3">
+    </div>
+      <div class="headshot-slide">
+      <img src="/images/CONFUSED.jpg" alt="Ajay Damodaran headshot 3">
+    </div>
+    <div class="headshot-slide">
+      <img src="/images/KICKING.jpg" alt="Ajay Damodaran headshot 4">
+    </div>
+  </div>
+</div>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,6 +76,43 @@
     .cta-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+    }
+      /* Headshot Slideshow Container */
+    .headshot-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      flex-shrink: 0;
+      animation: fadeInUp 1s ease 0.4s both;
+    }
+
+    .headshot-slideshow {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .headshot-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .headshot-slide.active {
+      opacity: 1;
+    }
+
+    .headshot-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* Section Styles */
@@ -223,7 +280,7 @@
   <div class="hero-banner">
     <div class="hero-content">
       <h1>Ajay Damodaran</h1>
-      <p>Making you laugh, one joke at a time</p>
+      <p></p>
       <a href="#shows" class="cta-button">See Upcoming Shows</a>
     </div>
   </div>
@@ -250,7 +307,7 @@
           <h3>The Lost Church</h3>
           <p><strong>Date:</strong> January 31, 2026</p>
           <p><strong>Venue:</strong> The Lost Church</p>
-            <p><html>WebsiteL</html> https://www.eventbrite.com/e/locals-only-tickets-1969995289943</p>
+            <p><html>Website</html> https://www.eventbrite.com/e/locals-only-tickets-1969995289943</p>
         </div>
         <div class="show-card">
           <h3>Weekend Warriors</h3>
@@ -290,7 +347,7 @@
   <section class="section-dark">
     <div class="container content-section">
       <h2 style="color: #e74c3c;">Get In Touch</h2>
-      <p>Want me to perform at your event? Let's talk!</p>
+      <p>I'll do your events. Before I can tell you when I see you, tell me where you're at here.</p>
       <a href="mailto:ajaydamodarancomedy@gmail.com" class="cta-button">Contact Me</a>
     </div>
   </section>
