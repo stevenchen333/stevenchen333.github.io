@@ -1,58 +1,304 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-    {% seo title=false %}
-    {% include meta.html %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} - {{ site.name }}</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
 
-    <meta name="theme-color" content="#000000">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/images/favicon-32x32.png">
-    {% include analytics_head.html %}
-  </head>
+    /* Hero Banner */
+    .hero-banner {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                  url('/images/banner1.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
 
-  <body>
-    <div id="bar"></div>
-    <div class="wrapper-container">
-      <div class="wrapper-masthead">
-        <div class="container">
-          <header class="masthead clearfix">
-            <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.baseurl }}{{ site.avatar }}" alt="{{ site.title }}" /></a>
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease;
+    }
 
-            <div class="site-info">
-              <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-              <p class="site-description">{{ site.description }}</p> 
-            </div>
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease 0.3s both;
+    }
 
-            <nav>
-              <a href="{{ site.baseurl }}/">Home</a>
-              <a href="{{ site.baseurl }}/getting-started">Email List</a>
-              <a href="{{ site.baseurl }}/search">Upcoming Shows</a>
-              <a href="{{ site.baseurl }}/about">About Me</a>
-              <a href="{{ site.baseurl }}/archive">Send me your questions!</a>
-            </nav>
-          </header>
+    .cta-button {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #e74c3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease 0.6s both;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+    }
+
+    /* Section Styles */
+    section {
+      min-height: 100vh;
+      padding: 80px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-light {
+      background: #f9f9f9;
+    }
+
+    .section-dark {
+      background: #2c3e50;
+      color: white;
+    }
+
+    /* Banner Sections */
+    .banner-section {
+      height: 60vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .banner-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .banner-section h2 {
+      position: relative;
+      color: white;
+      font-size: 3rem;
+      z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .banner-1 {
+      background-image: url('/images/comedy-show.jpg');
+    }
+
+    .banner-2 {
+      background-image: url('/images/stage-lights.jpg');
+    }
+
+    .banner-3 {
+      background-image: url('/images/audience.jpg');
+    }
+
+    /* Content Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .content-section {
+      text-align: center;
+    }
+
+    .content-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #e74c3c;
+    }
+
+    .content-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Shows Grid */
+    .shows-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .show-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .show-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .show-card h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+
+      .banner-section h2 {
+        font-size: 2rem;
+      }
+
+      .content-section h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Hero Banner -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <h1>Ajay Damodaran</h1>
+      <p>Making you laugh, one joke at a time</p>
+      <a href="#shows" class="cta-button">See Upcoming Shows</a>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="section-light">
+    <div class="container content-section">
+      <h2>About Me</h2>
+      <p>I'm here to make you laugh. Welcome to my page - time to find out.</p>
+    </div>
+  </section>
+
+  <!-- Parallax Banner 1 -->
+  <div class="banner-section banner-1">
+    <h2>Live Comedy Shows</h2>
+  </div>
+
+  <!-- Shows Section -->
+  <section id="shows" class="section-dark">
+    <div class="container content-section">
+      <h2 style="color: #e74c3c;">Upcoming Shows</h2>
+      <div class="shows-grid">
+        <div class="show-card">
+          <h3>The Lost Church</h3>
+          <p><strong>Date:</strong> January 31, 2026</p>
+          <p><strong>Venue:</strong> The Lost Church</p>
+            <p><html>WebsiteL</html> https://www.eventbrite.com/e/locals-only-tickets-1969995289943</p>
         </div>
-      </div>
-
-      <div class="wrapper-main">
-        <div id="main" role="main" class="container">
-          {{ content }}
+        <div class="show-card">
+          <h3>Weekend Warriors</h3>
+          <p><strong>Date:</strong> March 2, 2026</p>
+          <p><strong>Venue:</strong> Comedy Central Stage</p>
+          <p>Join us for a hilarious weekend show!</p>
         </div>
-      </div>
-
-      <div class="wrapper-footer">
-        <div class="container">
-          <footer class="footer">
-            {% include svg-icons.html %}
-          </footer>
+        <div class="show-card">
+          <h3>Late Night Laughs</h3>
+          <p><strong>Date:</strong> March 20, 2026</p>
+          <p><strong>Venue:</strong> Downtown Comedy Club</p>
+          <p>Late night comedy at its finest!</p>
         </div>
       </div>
     </div>
+  </section>
 
-    {% include analytics.html %}
-  </body>
+  <!-- Parallax Banner 2 -->
+  <div class="banner-section banner-2">
+    <h2>Your Comedy. Your Laughter.</h2>
+  </div>
+
+  <!-- Blog Posts Section (Jekyll Content) -->
+  <section class="section-light">
+    <div class="container content-section">
+      <h2>Latest Updates</h2>
+      {{ content }}
+    </div>
+  </section>
+
+  <!-- Parallax Banner 3 -->
+  <div class="banner-section banner-3">
+    <h2>Book Me For Your Event</h2>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="section-dark">
+    <div class="container content-section">
+      <h2 style="color: #e74c3c;">Get In Touch</h2>
+      <p>Want me to perform at your event? Let's talk!</p>
+      <a href="mailto:ajaydamodarancomedy@gmail.com" class="cta-button">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Ajay Damodaran Comedy. All rights reserved.</p>
+  </footer>
+
+</body>
 </html>
