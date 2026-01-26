@@ -18,52 +18,43 @@
       line-height: 1.6;
       color: #333;
     }
-      
-<!-- Hero Banner -->
-<div class="hero-banner">
-  <div class="hero-content">
-    <!-- Headshot Slideshow -->
-    <div class="headshot-container">
-      <div class="headshot-slideshow">
-        <div class="headshot-slide active">
-          <img src="/images/CONFUSED.jpg" alt="Ajay Damodaran headshot 1">
-        </div>
-        <div class="headshot-slide">
-          <img src="/images/LISTENING.jpg" alt="Ajay Damodaran headshot 2">
-        </div>
-        <div class="headshot-slide">
-          <img src="/images/READING.jpg" alt="Ajay Damodaran headshot 3">
-        </div>
-        <div class="headshot-slide">
-          <img src="/images/CHINNY.jpg" alt="Ajay Damodaran headshot 4">
-        </div>
-        <div class="headshot-slide">
-          <img src="/images/KICKING.jpg" alt="Ajay Damodaran headshot 5">
-        </div>
-      </div>
-    </div>
-    
-    <h1>Ajay Damodaran</h1>
-    <a href="#shows" class="cta-button">See Upcoming Shows</a>
-  </div>
-</div>
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
+    /* Hero Banner */
+    .hero-banner {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-.hero-content h1 {
-  font-size: 4rem;
-  margin: 0;
-  animation: fadeInUp 1s ease 0.6s both;
-}
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      z-index: 2;
+    }
 
-.hero-content .cta-button {
-  animation: fadeInUp 1s ease 0.8s both;
-}
+    .headshot-name-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin: 0;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInUp 1s ease 0.6s both;
+    }
+
+    .hero-content .cta-button {
+      animation: fadeInUp 1s ease 0.8s both;
+    }
 
     .cta-button {
       display: inline-block;
@@ -74,35 +65,31 @@
       border-radius: 50px;
       font-size: 1.2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 1s ease 0.6s both;
     }
 
     .cta-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
     }
-      /* Headshot Slideshow Container */
+
+    /* Headshot Slideshow Container */
     .headshot-container {
       position: relative;
-      width: 1000 px;
-      height: 1000 px;
-      flex-shrink: 0;
       animation: fadeInUp 1s ease 0.4s both;
+      max-width: 100%;
     }
 
     .headshot-slideshow {
       position: relative;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      overflow: hidden;
       box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     .headshot-slide {
       position: absolute;
-      top: 500;
-      left: 50;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       opacity: 0;
@@ -113,10 +100,14 @@
       opacity: 1;
     }
 
+    .headshot-slide:first-child {
+      position: relative;
+    }
+
     .headshot-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
 
     /* Section Styles */
@@ -233,6 +224,16 @@
       font-size: 1.5rem;
     }
 
+    .show-card h4 {
+      color: #555;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+
+    .show-card h4 strong {
+      color: #2c3e50;
+    }
+
     /* Footer */
     footer {
       background: #1a1a1a;
@@ -259,21 +260,24 @@
     }
 
     /* Responsive */
-  @media (max-width: 768px) {
-  .headshot-container {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-content .cta-button {
-    font-size: 1rem;
-    padding: 12px 30px;
-  }
-}
+    @media (max-width: 768px) {
+      .headshot-name-wrapper {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .headshot-container {
+        max-width: 90%;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content .cta-button {
+        font-size: 1rem;
+        padding: 12px 30px;
+      }
 
       .banner-section h2 {
         font-size: 2rem;
@@ -290,7 +294,32 @@
   <!-- Hero Banner -->
   <div class="hero-banner">
     <div class="hero-content">
+      <!-- Headshot and Name Row -->
+      <div class="headshot-name-wrapper">
+        <!-- Headshot Slideshow -->
+        <div class="headshot-container">
+          <div class="headshot-slideshow">
+            <div class="headshot-slide active">
+              <img src="/images/CONFUSED.jpg" alt="Ajay Damodaran headshot 1">
+            </div>
+            <div class="headshot-slide">
+              <img src="/images/LISTENING.jpg" alt="Ajay Damodaran headshot 2">
+            </div>
+            <div class="headshot-slide">
+              <img src="/images/READING.jpg" alt="Ajay Damodaran headshot 3">
+            </div>
+            <div class="headshot-slide">
+              <img src="/images/CHINNY.jpg" alt="Ajay Damodaran headshot 4">
+            </div>
+            <div class="headshot-slide">
+              <img src="/images/KICKING.jpg" alt="Ajay Damodaran headshot 5">
+            </div>
+          </div>
+        </div>
+        
         <h1>Ajay Damodaran</h1>
+      </div>
+      
       <a href="#shows" class="cta-button">See Upcoming Shows</a>
     </div>
   </div>
@@ -312,13 +341,12 @@
   <section id="shows" class="section-dark">
     <div class="container content-section">
       <h2 style="color: #e74c3c;">Upcoming Shows</h2>
-      <h4 style="color #1323d4;">The Lost Church</h4>
       <div class="shows-grid">
         <div class="show-card">
           <h3>The Lost Church</h3>
           <h4><strong>Date:</strong> January 31, 2026</h4>
           <h4><strong>Venue:</strong> The Lost Church</h4>
-            <h4><html>Website</html> https://www.eventbrite.com/e/locals-only-tickets-1969995289943</h4>
+          <h4><strong>Website:</strong> <a href="https://www.eventbrite.com/e/locals-only-tickets-1969995289943" target="_blank">Event Details</a></h4>
         </div>
         <div class="show-card">
           <h3>Weekend Warriors</h3>
@@ -358,7 +386,7 @@
   <section class="section-dark">
     <div class="container content-section">
       <h2 style="color: #e74c3c;">Get In Touch</h2>
-      <p>I'll do your events. Before I can tell you when I see you, tell me where you're at here.</p>
+      <p>I'll do your show. Before I can tell you when I see you, you gotta let me know where I gotta go.</p>
       <a href="mailto:ajaydamodarancomedy@gmail.com" class="cta-button">Contact Me</a>
     </div>
   </section>
@@ -384,8 +412,8 @@
     slides[currentSlide].classList.add('active');
   }
 
-  // Change slide every 3 seconds (2000 milliseconds)
-  setInterval(showNextSlide, 2000);
+  // Change slide every 2 seconds
+  setInterval(showNextSlide, 900);
 </script>
     
 </body>
