@@ -37,25 +37,6 @@
       line-height: 1.6;
       color: #333;
     }
-<script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.headshot-slide');
-  const totalSlides = slides.length;
-
-  function showNextSlide() {
-    // Remove active class from current slide
-    slides[currentSlide].classList.remove('active');
-    
-    // Move to next slide (loop back to 0 if at the end)
-    currentSlide = (currentSlide + 1) % totalSlides;
-    
-    // Add active class to new slide
-    slides[currentSlide].classList.add('active');
-  }
-
-  // Change slide every 3 seconds (3000 milliseconds)
-  setInterval(showNextSlide, 3000);
-</script>
       
     /* Hero Banner */
     .hero-banner {
@@ -375,6 +356,24 @@
   <footer>
     <p>&copy; 2026 Ajay Damodaran Comedy. All rights reserved.</p>
   </footer>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.headshot-slide');
+  const totalSlides = slides.length;
 
+  function showNextSlide() {
+    // Remove active class from current slide
+    slides[currentSlide].classList.remove('active');
+    
+    // Move to next slide (loop back to 0 if at the end)
+    currentSlide = (currentSlide + 1) % totalSlides;
+    
+    // Add active class to new slide
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Change slide every 3 seconds (2000 milliseconds)
+  setInterval(showNextSlide, 2000);
+</script>
 </body>
 </html>
