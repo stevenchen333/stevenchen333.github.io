@@ -339,31 +339,82 @@
   </div>
 
   <!-- Shows Section -->
-  <section id="shows" class="section-dark">
-    <div class="container content-section">
-      <h2 style="color: #e74c3c;">Upcoming Shows</h2>
-      <div class="shows-grid">
-        <div class="show-card">
-          <h3>The Lost Church</h3>
-          <h4><strong>Date:</strong> January 31, 2026</h4>
-          <h4><strong>Venue:</strong> The Lost Church</h4>
-          <h4><strong>Website:</strong> <a href="https://www.eventbrite.com/e/locals-only-tickets-1969995289943" target="_blank">Event Details</a></h4>
-        </div>
-        <div class="show-card">
-          <h3>Weekend Warriors</h3>
-          <p><strong>Date:</strong> March 2, 2026</p>
-          <p><strong>Venue:</strong> Comedy Central Stage</p>
-          <p>Join us for a hilarious weekend show!</p>
-        </div>
-        <div class="show-card">
-          <h3>Late Night Laughs</h3>
-          <p><strong>Date:</strong> March 20, 2026</p>
-          <p><strong>Venue:</strong> Downtown Comedy Club</p>
-          <p>Late night comedy at its finest!</p>
-        </div>
-      </div>
+  <!-- Shows Section -->
+<section id="shows" class="section-dark">
+  <div class="container content-section">
+    <h2 style="color: #e74c3c;">Upcoming Shows</h2>
+    <div id="shows-grid" class="shows-grid">
+      <p style="color: white;">Loading shows...</p>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  const CALENDAR_ID = "1c5514b69ae686552dd01662e31e1e921bb5670a74d9c9fafd990fcc14508ee6@group.calendar.google.com";
+  const API_KEY = "AIzaSyBCP6puMSBaWKkJ7zw55jiH1XWQpAjRhGY";
+
+  function parseDescription(desc) {
+    const fields = { ticket: null, image: null, notes: null };
+    if (!desc) return fields;
+    desc.split('\n').forEach(line => {
+      const [key, ...rest] = line.split(':');
+      const val = rest.join(':').trim();
+      if (key.trim() === 'ticket') fields.ticket = val;
+      if (key.trim() === 'image') fields.image = val;
+      if (key.trim() === 'notes') fields.notes = val;
+    });
+    return fields;
+  }
+
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  }
+
+  async function loadShows() {
+    const now = new Date().toISOString();
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&orderBy=startTime&singleEvents=true&maxResults=10`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      const grid = document.getElementById('shows-grid');
+
+      if (!data.items || data.items.length === 0) {
+        grid.innerHTML = '<p style="color: white;">No upcoming shows right now — check back soon!</p>';
+        return;
+      }
+
+      grid.innerHTML = data.items.map(event => {
+        const { ticket, image, notes } = parseDescription(event.description);
+        const date = formatDate(event.start.dateTime || event.start.date);
+        const venue = event.location || 'Venue TBA';
+        const imgTag = image
+          ? `<img src="${image}" alt="${event.summary}" style="width:100%;border-radius:6px;margin-bottom:15px;">`
+          : '';
+        const ticketBtn = ticket
+          ? `<a href="${ticket}" target="_blank" class="cta-button" style="font-size:0.9rem;padding:10px 24px;margin-top:12px;display:inline-block;">Get Tickets</a>`
+          : '';
+        const notesLine = notes ? `<p style="color:#777;font-size:0.9rem;margin-top:8px;">${notes}</p>` : '';
+
+        return `
+          <div class="show-card">
+            ${imgTag}
+            <h3>${event.summary}</h3>
+            <h4><strong>Date:</strong> ${date}</h4>
+            <h4><strong>Venue:</strong> ${venue}</h4>
+            ${notesLine}
+            ${ticketBtn}
+          </div>`;
+      }).join('');
+
+    } catch (err) {
+      document.getElementById('shows-grid').innerHTML = '<p style="color:white;">Couldn\'t load shows right now. Check back soon!</p>';
+    }
+  }
+
+  loadShows();
+</script>
 
   <!-- Parallax Banner 2 -->
   <div class="banner-section banner-2">
