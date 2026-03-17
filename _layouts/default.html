@@ -295,6 +295,11 @@
       transform: translateY(-6px);
       box-shadow: 0 15px 35px rgba(0,0,0,0.35);
     }
+      
+a.show-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 
     .show-card-image {
       width: 100%;
@@ -520,6 +525,7 @@
     <div class="shows-grid">
 
       <!-- CARD 1 -->
+      <a class="show-card" id="show-link-1" href="#" target="_blank">
       <div class="show-card">
         <div class="show-card-image-placeholder">🎤</div>
         <div class="show-card-body">
@@ -528,11 +534,13 @@
             <span><strong>Date:</strong> <span id="show-date-1">Day, Month Date, Year · Time</span></span>
             <span><strong>Venue:</strong> <span id="show-venue-1">Venue Name, City</span></span>
           </div>
-            <div class="show-card-ticket" id="show-ticket-1"></div>
         </div>
       </div>
+        </a>
+
 
       <!-- CARD 2 -->
+    <a class="show-card" id="show-link-2" href="#" target="_blank">
       <div class="show-card">
         <div class="show-card-image-placeholder">🎤</div>
         <div class="show-card-body">
@@ -541,11 +549,12 @@
             <span><strong>Date:</strong> <span id="show-date-2">Day, Month Date, Year · Time</span></span>
             <span><strong>Venue:</strong> <span id="show-venue-2">Venue Name, City</span></span>
           </div>
-          <div class="show-card-ticket" id="show-ticket-2"></div>
         </div>
       </div>
+        </a>
 
       <!-- CARD 3 -->
+    <a class="show-card" id="show-link-3" href="#" target="_blank">
       <div class="show-card">
         <div class="show-card-image-placeholder">🎤</div>
         <div class="show-card-body">
@@ -554,11 +563,12 @@
             <span><strong>Date:</strong> <span id="show-date-3">Day, Month Date, Year · Time</span></span>
             <span><strong>Venue:</strong> <span id="show-venue-3">Venue Name, City</span></span>
           </div>
-          <div class="show-card-ticket" id="show-ticket-3"></div>
         </div>
       </div>
+    </a>
 
       <!-- CARD 4 -->
+    <a class="show-card" id="show-link-4" href="#" target="_blank">
       <div class="show-card">
         <div class="show-card-image-placeholder">🎤</div>
         <div class="show-card-body">
@@ -567,9 +577,9 @@
             <span><strong>Date:</strong> <span id="show-date-4">Day, Month Date, Year · Time</span></span>
             <span><strong>Venue:</strong> <span id="show-venue-4">Venue Name, City</span></span>
           </div>
-          <div class="show-card-ticket" id="show-ticket-4"></div>
         </div>
       </div>
+    </a>
 
     </div>
     <!-- =====================================================
@@ -616,19 +626,22 @@
 
       data.items.forEach((event, i) => {
         const num = i + 1;
+        const linkEl  = document.getElementById(`show-link-${num}`);
         const { ticket } = parseDescription(event.description);
 
         const nameEl   = document.getElementById(`show-name-${num}`);
         const dateEl   = document.getElementById(`show-date-${num}`);
         const venueEl  = document.getElementById(`show-venue-${num}`);
-        const ticketEl = document.getElementById(`show-ticket-${num}`);
 
         if (nameEl)  nameEl.textContent  = event.summary || 'TBA';
         if (dateEl)  dateEl.textContent  = formatDateTime(event.start.dateTime || event.start.date);
         if (venueEl) venueEl.textContent = event.location || 'Venue TBA';
 
-        if (ticketEl && ticket) {
-          ticketEl.innerHTML = `<a href="${ticket}" target="_blank">Get Tickets</a>`;
+        if (linkEl && ticket) {
+  linkEl.href = ticket;
+} else if (linkEl) {
+  linkEl.style.cursor = 'default';
+}
         }
       });
 
