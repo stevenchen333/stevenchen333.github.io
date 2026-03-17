@@ -450,6 +450,7 @@
 
       .content-section h2 {
         font-size: 2rem;
+        height: 40vh
       }
     }
   </style>
@@ -509,7 +510,7 @@
       </div>
       <div class="shows-intro-text">
         <h2>Upcoming Shows!</h2>
-        <p>Based in Oakland, California, Ajay is available for bookings at comedy clubs, independent shows, and improv arenas. Contact him here: <a href="mailto:ajaydamodarancomedy@gmail.com" style="color:#e74c3c;">Email list →</a></p>
+        <p>Based in Oakland, California, Ajay is available for bookings at comedy clubs, independent shows, and improv arenas. Email him here: <a href="/cdn-cgi/l/email-protection#31505b504855505c5e555043505f525e5c54554871565c50585d1f525e5c" style="color:#e74c3c;">Email list →</a></p>
       </div>
     </div>
 
@@ -518,50 +519,50 @@
          ===================================================== -->
     <div class="shows-grid">
 
-      <!-- CARD 1 — Edit show name, date/time, location below -->
+      <!-- CARD 1 -->
       <div class="show-card">
         <div class="show-card-image-placeholder">🎤</div>
         <div class="show-card-body">
-          <h3>Show Name Here</h3>
+          <h3 id="show-name-1">Show Name Here</h3>
           <div class="show-card-meta">
-            <span><strong>Date:</strong> Day, Month Date, Year · Time</span>
-            <span><strong>Venue:</strong> Venue Name, City</span>
+            <span><strong>Date:</strong> <span id="show-date-1">Day, Month Date, Year · Time</span></span>
+            <span><strong>Venue:</strong> <span id="show-venue-1">Venue Name, City</span></span>
           </div>
         </div>
       </div>
 
-      <!-- CARD 2 — Edit show name, date/time, location below -->
+      <!-- CARD 2 -->
       <div class="show-card">
         <div class="show-card-image-placeholder">🎤</div>
         <div class="show-card-body">
-          <h3>Show Name Here</h3>
+          <h3 id="show-name-2">Show Name Here</h3>
           <div class="show-card-meta">
-            <span><strong>Date:</strong> Day, Month Date, Year · Time</span>
-            <span><strong>Venue:</strong> Venue Name, City</span>
+            <span><strong>Date:</strong> <span id="show-date-2">Day, Month Date, Year · Time</span></span>
+            <span><strong>Venue:</strong> <span id="show-venue-2">Venue Name, City</span></span>
           </div>
         </div>
       </div>
 
-      <!-- CARD 3 — Edit show name, date/time, location below -->
+      <!-- CARD 3 -->
       <div class="show-card">
         <div class="show-card-image-placeholder">🎤</div>
         <div class="show-card-body">
-          <h3>Show Name Here</h3>
+          <h3 id="show-name-3">Show Name Here</h3>
           <div class="show-card-meta">
-            <span><strong>Date:</strong> Day, Month Date, Year · Time</span>
-            <span><strong>Venue:</strong> Venue Name, City</span>
+            <span><strong>Date:</strong> <span id="show-date-3">Day, Month Date, Year · Time</span></span>
+            <span><strong>Venue:</strong> <span id="show-venue-3">Venue Name, City</span></span>
           </div>
         </div>
       </div>
 
-      <!-- CARD 4 — Edit show name, date/time, location below -->
+      <!-- CARD 4 -->
       <div class="show-card">
         <div class="show-card-image-placeholder">🎤</div>
         <div class="show-card-body">
-          <h3>Show Name Here</h3>
+          <h3 id="show-name-4">Show Name Here</h3>
           <div class="show-card-meta">
-            <span><strong>Date:</strong> Day, Month Date, Year · Time</span>
-            <span><strong>Venue:</strong> Venue Name, City</span>
+            <span><strong>Date:</strong> <span id="show-date-4">Day, Month Date, Year · Time</span></span>
+            <span><strong>Venue:</strong> <span id="show-venue-4">Venue Name, City</span></span>
           </div>
         </div>
       </div>
@@ -575,12 +576,54 @@
   </div>
 </section>
 
+<script>
+  const CALENDAR_ID = "1c5514b69ae686552dd01662e31e1e921bb5670a74d9c9fafd990fcc14508ee6@group.calendar.google.com";
+  const API_KEY = "AIzaSyBCP6puMSBaWKkJ7zw55jiH1XWQpAjRhGY";
+
+  function formatDateTime(dateStr) {
+    if (!dateStr) return 'TBA';
+    const d = new Date(dateStr);
+    if (dateStr.includes('T')) {
+      return d.toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' })
+        + ' · ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    }
+    return d.toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
+  }
+
+  async function fillShowCards() {
+    const now = new Date().toISOString();
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&orderBy=startTime&singleEvents=true&maxResults=4`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      if (!data.items) return;
+
+      data.items.forEach((event, i) => {
+        const num = i + 1;
+        const nameEl  = document.getElementById(`show-name-${num}`);
+        const dateEl  = document.getElementById(`show-date-${num}`);
+        const venueEl = document.getElementById(`show-venue-${num}`);
+
+        if (nameEl)  nameEl.textContent  = event.summary || 'TBA';
+        if (dateEl)  dateEl.textContent  = formatDateTime(event.start.dateTime || event.start.date);
+        if (venueEl) venueEl.textContent = event.location || 'Venue TBA';
+      });
+
+    } catch (err) {
+      console.error('Could not load shows:', err);
+    }
+  }
+
+  fillShowCards();
+</script>
+
   <!-- Contact Section -->
   <section class="section-dark">
     <div class="container content-section">
       <h2 style="color: #e74c3c;">Get In Touch</h2>
       <p>Want me to do your show. Before I can tell you when I see you, you gotta let me know where I gotta go.</p>
-      <a href="/cdn-cgi/l/email-protection#95f4fff4ecf1f4f8faf1f4e7f4fbf6faf8f0f1ecd5f2f8f4fcf9bbf6faf8" class="cta-button">Contact Me</a>
+      <a href="/cdn-cgi/l/email-protection#95f4fff4ecf1f4f8faf1f4e7f4fbf6faf8f0f1ecd5f2f8f4fcf9bbf6faf8" class="cta-button">Email Me</a>
     </div>
   </section>
 
@@ -589,17 +632,16 @@
     <p>&copy; 2026 Ajay Damodaran Comedy. All rights reserved.</p>
   </footer>
     
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   let currentSlide = 0;
   const slides = document.querySelectorAll('.headshot-slide');
   const totalSlides = slides.length;
 
   function showNextSlide() {
-    // Remove active class from current slide
     slides[currentSlide].classList.remove('active');
-    
-    // Move to next slide (loop back to 0 if at the end)
     currentSlide = (currentSlide + 1) % totalSlides;
-    
-    // Add active class to new slide
-   
+    slides[currentSlide].classList.add('active');
+  }
+
+  setInterval(showNextSlide, 5000);
+</script>
