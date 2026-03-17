@@ -540,8 +540,8 @@
           <div class="show-card-meta">
             <span><strong>Date:</strong> <span id="show-date-2">Day, Month Date, Year · Time</span></span>
             <span><strong>Venue:</strong> <span id="show-venue-2">Venue Name, City</span></span>
-                          <div class="show-card-ticket" id="show-ticket-2"></div>
           </div>
+          <div class="show-card-ticket" id="show-ticket-2"></div>
         </div>
       </div>
 
@@ -553,8 +553,8 @@
           <div class="show-card-meta">
             <span><strong>Date:</strong> <span id="show-date-3">Day, Month Date, Year · Time</span></span>
             <span><strong>Venue:</strong> <span id="show-venue-3">Venue Name, City</span></span>
-                          <div class="show-card-ticket" id="show-ticket-3"></div>
           </div>
+          <div class="show-card-ticket" id="show-ticket-3"></div>
         </div>
       </div>
 
@@ -566,8 +566,8 @@
           <div class="show-card-meta">
             <span><strong>Date:</strong> <span id="show-date-4">Day, Month Date, Year · Time</span></span>
             <span><strong>Venue:</strong> <span id="show-venue-4">Venue Name, City</span></span>
-                          <div class="show-card-ticket" id="show-ticket-4"></div>
           </div>
+          <div class="show-card-ticket" id="show-ticket-4"></div>
         </div>
       </div>
 
@@ -582,46 +582,6 @@
 
 <script>
   const CALENDAR_ID = "1c5514b69ae686552dd01662e31e1e921bb5670a74d9c9fafd990fcc14508ee6@group.calendar.google.com";
-  const API_KEY = "AIzaSyBCP6puMSBaWKkJ7zw55jiH1XWQpAjRhGY";
-
-  function formatDateTime(dateStr) {
-    if (!dateStr) return 'TBA';
-    const d = new Date(dateStr);
-    if (dateStr.includes('T')) {
-      return d.toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' })
-        + ' · ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
-    }
-    return d.toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
-  }
-
-  async function fillShowCards() {
-    const now = new Date().toISOString();
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&orderBy=startTime&singleEvents=true&maxResults=4`;
-
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      if (!data.items) return;
-
-      data.items.forEach((event, i) => {
-        const num = i + 1;
-        const nameEl  = document.getElementById(`show-name-${num}`);
-        const dateEl  = document.getElementById(`show-date-${num}`);
-        const venueEl = document.getElementById(`show-venue-${num}`);
-
-        if (nameEl)  nameEl.textContent  = event.summary || 'TBA';
-        if (dateEl)  dateEl.textContent  = formatDateTime(event.start.dateTime || event.start.date);
-        if (venueEl) venueEl.textContent = event.location || 'Venue TBA';
-      });
-
-    } catch (err) {
-      console.error('Could not load shows:', err);
-    }
-  }
-
-  fillShowCards();
-</script>
-const CALENDAR_ID = "1c5514b69ae686552dd01662e31e1e921bb5670a74d9c9fafd990fcc14508ee6@group.calendar.google.com";
   const API_KEY = "AIzaSyBCP6puMSBaWKkJ7zw55jiH1XWQpAjRhGY";
 
   function parseDescription(desc) {
@@ -667,7 +627,6 @@ const CALENDAR_ID = "1c5514b69ae686552dd01662e31e1e921bb5670a74d9c9fafd990fcc145
         if (dateEl)  dateEl.textContent  = formatDateTime(event.start.dateTime || event.start.date);
         if (venueEl) venueEl.textContent = event.location || 'Venue TBA';
 
-        // Show ticket button only if a link exists
         if (ticketEl && ticket) {
           ticketEl.innerHTML = `<a href="${ticket}" target="_blank">Get Tickets</a>`;
         }
@@ -677,6 +636,10 @@ const CALENDAR_ID = "1c5514b69ae686552dd01662e31e1e921bb5670a74d9c9fafd990fcc145
       console.error('Could not load shows:', err);
     }
   }
+
+  fillShowCards();
+</script>
+
   <!-- Contact Section -->
   <section class="section-dark">
     <div class="container content-section">
