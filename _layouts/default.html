@@ -276,6 +276,33 @@
       margin-right: auto;
     }
 
+    /* About Banner */
+    .about-banner {
+      background: #f0f0f0;
+      padding: 60px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .about-banner-inner {
+      max-width: 600px;
+    }
+
+    .about-banner-inner h2 {
+      font-size: 2.5rem;
+      color: #e74c3c;
+      margin-bottom: 1rem;
+    }
+
+    .about-banner-inner p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
     /* Shows Section Intro */
     .shows-intro {
       display: flex;
@@ -595,7 +622,7 @@
   <nav class="navbar">
     <a href="#" class="navbar-brand">Ajay Damodaran</a>
     <ul class="navbar-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="/about.html">About</a></li>
       <li><a href="#shows">Upcoming Shows</a></li>
       <li>
         <a href="https://www.youtube.com/@AjayDamodaran" target="_blank" class="nav-icon" aria-label="YouTube">
@@ -643,19 +670,14 @@
     </div>
   </div>
 
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="about-inner">
-      <div class="about-photo">
-        <img src="/images/CONFUSED.jpg" alt="Ajay Damodaran">
-      </div>
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I'm here to make you laugh. Welcome to my page — time to find out.</p>
-        <p>Based in Oakland, California, Ajay Damodaran is a stand-up comedian available for comedy clubs, independent shows, and improv arenas across the Bay Area and beyond.</p>
-      </div>
+  <!-- About Banner -->
+  <div class="about-banner">
+    <div class="about-banner-inner">
+      <h2>About Ajay</h2>
+      <p>Bay Area comedian. Stand-up, improv, and everything in between.</p>
+      <a href="/about.html" class="cta-button">Learn More</a>
     </div>
-  </section>
+  </div>
 
     
   <!-- Shows Section -->
@@ -786,13 +808,14 @@
         if (venueEl) venueEl.textContent = event.location || 'Venue TBA';
 
         if (linkEl && ticket) {
-  linkEl.href = ticket;
-  linkEl.style.cursor = 'pointer';
-} else if (linkEl) {
-  linkEl.removeAttribute('href');
-  linkEl.style.cursor = 'default';
-  linkEl.style.pointerEvents = 'none';
-}
+          linkEl.href = ticket;
+          linkEl.style.cursor = 'pointer';
+        } else if (linkEl) {
+          linkEl.removeAttribute('href');
+          linkEl.style.cursor = 'default';
+          linkEl.style.pointerEvents = 'none';
+        }
+      });
 
     } catch (err) {
       console.error('Could not load shows:', err);
