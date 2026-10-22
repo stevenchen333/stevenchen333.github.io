@@ -10,7 +10,7 @@
 <atom:link href="https://stevenchen333.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Notes on mathematics, probability, optimization and optimal control.</description>
 <generator>quarto-1.10.19</generator>
-<lastBuildDate>Thu, 22 Oct 2026 13:17:36 GMT</lastBuildDate>
+<lastBuildDate>Thu, 22 Oct 2026 13:22:17 GMT</lastBuildDate>
 <item>
   <title>Irrationality of Square Root</title>
   <link>https://stevenchen333.github.io/posts/Real Analysis/square_root.html</link>
@@ -48,7 +48,7 @@
   <category>Real Analysis</category>
   <category>Number Theory</category>
   <guid>https://stevenchen333.github.io/posts/Real Analysis/square_root.html</guid>
-  <pubDate>Thu, 22 Oct 2026 13:17:36 GMT</pubDate>
+  <pubDate>Thu, 22 Oct 2026 13:22:17 GMT</pubDate>
 </item>
 </channel>
 </rss>
