@@ -1,0 +1,56 @@
+---
+title: "Irrationality of Square Root"
+toc: true
+description: "An exploration of the contraction mapping theorem."
+categories:
+    - Real Analysis
+    - Number Theory
+---
+## Motivation
+
+## Theorem and Proof
+
+::: {#thm-geometric-series}
+## Geometric Series
+
+For any $r \neq 1$ and positive integer $n$,
+
+$$
+\sum_{k=0}^{n-1} r^k
+=
+\frac{1-r^n}{1-r}.
+$$
+:::
+
+::: {.proof}
+Let
+
+$$
+S = 1+r+r^2+\cdots+r^{n-1}.
+$$
+
+Multiplying both sides by $r$ gives
+
+$$
+rS = r+r^2+\cdots+r^n.
+$$
+
+Subtracting,
+
+$$
+(1-r)S = 1-r^n.
+$$
+
+Since $r\neq 1$, we obtain
+
+$$
+S = \frac{1-r^n}{1-r}.
+$$
+
+This completes the proof.
+:::
+
+As established in @thm-geometric-series,
+the finite geometric series has a closed-form
+expression.
+

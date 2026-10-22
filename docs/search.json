@@ -1,9 +1,51 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I find beauty in mathematics, not only by its utility, but also on its results of theorems, lemmas, proofs, even its conjectures. An analogy I always make is that theorems and lemma are like magic tricks. The proof is teaching you how to do that magic trick! Yet, unlike most magic tricks, knowing how they work does not necessarily make them any less fascinating. Sometimes, it makes them even more beautiful.\nThrough this blog, I want to explore mathematical theorems and results that I personally find fascinating, and hopefully share some of that fascination with others. I will also tell you why do I think it is beautiful. It might not be a very fancy results, but somehow I find it beautiful. ## How I approach this blog Oftentimes, the resources I found in learning mathematic’s theorems, they are too complicated and unintuitive such that it requires a lot of preliminaries that leads to rabbit holes of resources to dig, which then frequently leads to those initial excitements of learning a new concept vanish.\nOr it is made too shallow (usually, to reach a more general audience) but resulted in losing a lot of details and nuances that makes mathematics exciting!\nThis blog is my attempt to find a middle ground between these two approaches. I will explain results where its shallow enough to make sure readers can follow, while at the same time, deep enough to satiate mathematician’s curiosity hunger! Noting everyone’s hunger level are different, I will put my resources and further readings in each post.\nFinally, to answer your question of “where would we use this theorem?”, I will occasionally put some examples of practical usages where the concept explained is used.\n\n\n\nI am in no way an expert on mathematics. Equipped with a master’s degree that involves mathematics, along with immense passion for the subject, I will try my best to make each post as accurate, as helpful as possible. If you notice any mathematical errors, typos, or unclear explanations, please raise a GitHub Issue. Questions, corrections, and suggestions are always welcome!"
+  },
+  {
+    "objectID": "about.html#questions-errors-and-suggestions",
+    "href": "about.html#questions-errors-and-suggestions",
+    "title": "About",
+    "section": "",
+    "text": "I am in no way an expert on mathematics. Equipped with a master’s degree that involves mathematics, along with immense passion for the subject, I will try my best to make each post as accurate, as helpful as possible. If you notice any mathematical errors, typos, or unclear explanations, please raise a GitHub Issue. Questions, corrections, and suggestions are always welcome!"
+  },
+  {
+    "objectID": "posts/Real Analysis/square_root.html#theorem-and-proof",
+    "href": "posts/Real Analysis/square_root.html#theorem-and-proof",
+    "title": "Irrationality of Square Root",
+    "section": "2 Theorem and Proof",
+    "text": "2 Theorem and Proof\n\nTheorem 1 (Geometric Series) For any \\(r \\neq 1\\) and positive integer \\(n\\),\n\\[\n\\sum_{k=0}^{n-1} r^k\n=\n\\frac{1-r^n}{1-r}.\n\\]\n\n\nProof. Let\n\\[\nS = 1+r+r^2+\\cdots+r^{n-1}.\n\\]\nMultiplying both sides by \\(r\\) gives\n\\[\nrS = r+r^2+\\cdots+r^n.\n\\]\nSubtracting,\n\\[\n(1-r)S = 1-r^n.\n\\]\nSince \\(r\\neq 1\\), we obtain\n\\[\nS = \\frac{1-r^n}{1-r}.\n\\]\nThis completes the proof.\n\nAs established in Theorem 1, the finite geometric series has a closed-form expression."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Mathematical Notes",
+    "title": "Theoretical",
     "section": "",
-    "text": "Welcome to my mathematical blog.\nHere I write about mathematical ideas, proofs, probability theory, stochastic processes, and optimization.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Explorations in interesting mathematical theorems.\nMy goal is to make mathematical ideas approachable without sacrificing the details and subtleties that make them interesting.\nSome articles are introductory, while others explore more advanced topics. Whenever possible, I will highlight the necessary prerequisites and provide references for further reading."
+  },
+  {
+    "objectID": "index.html#start-here",
+    "href": "index.html#start-here",
+    "title": "Theoretical",
+    "section": "1 Start Here",
+    "text": "1 Start Here\n\nAbout This Blog — Why I started writing and how I approach mathematics.\n — Essential foundations and background concepts."
+  },
+  {
+    "objectID": "index.html#recent-posts",
+    "href": "index.html#recent-posts",
+    "title": "Theoretical",
+    "section": "2 Recent Posts",
+    "text": "2 Recent Posts"
+  },
+  {
+    "objectID": "index.html#questions-and-corrections",
+    "href": "index.html#questions-and-corrections",
+    "title": "Theoretical",
+    "section": "3 Questions and Corrections",
+    "text": "3 Questions and Corrections\nFound a mathematical error, typo, or unclear explanation? Please raise a GitHub Issue.\nQuestions, alternative proofs, and suggestions are always welcome!"
   }
 ]

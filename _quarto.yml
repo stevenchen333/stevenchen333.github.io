@@ -4,16 +4,20 @@ project:
   output-dir: docs
 
 website:
-  title: "Mathematical Notes"
+  title: "Greedy Optimizer"
   site-url: "https://stevenchen333.github.io"
-  description: "Notes on mathematics, probability, optimization."
+  description: "Notes on mathematics, probability, optimization and optimal control."
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
         text: About
-
+    right:
+      - text: "Report an Error"
+        icon: bug
+        href: https://github.com/stevenchen333/stevenchen333.github.io/issues/new
+        target: _blank
 format:
   html:
     theme: litera

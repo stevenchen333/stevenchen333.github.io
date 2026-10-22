@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mathematical Notes</title>
+<title>Theoretical – Greedy Optimizer</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -85,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -135,7 +135,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="alternate" type="application/rss+xml" title="Mathematical Notes" href="index.xml" data-external="1"></head>
+<link rel="alternate" type="application/rss+xml" title="Greedy Optimizer" href="index.xml" data-external="1"></head>
 
 <body class="nav-fixed quarto-light">
 
@@ -145,7 +145,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Mathematical Notes</span>
+    <span class="navbar-title">Greedy Optimizer</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -159,8 +159,15 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.qmd"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/stevenchen333/stevenchen333.github.io/issues/new" target="_blank"> <i class="bi bi-bug" role="img">
+</i> 
+<span class="menu-text">Report an Error</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -174,14 +181,22 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#start-here" id="toc-start-here" class="nav-link active" data-scroll-target="#start-here"><span class="header-section-number">1</span> Start Here</a></li>
+  <li><a href="#recent-posts" id="toc-recent-posts" class="nav-link" data-scroll-target="#recent-posts"><span class="header-section-number">2</span> Recent Posts</a></li>
+  <li><a href="#questions-and-corrections" id="toc-questions-and-corrections" class="nav-link" data-scroll-target="#questions-and-corrections"><span class="header-section-number">3</span> Questions and Corrections</a></li>
+  </ul>
+</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TnVtYmVyJTIwVGhlb3J5">Number Theory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVhbCUyMEFuYWx5c2lz">Real Analysis <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mathematical Notes</h1>
+<h1 class="title">Theoretical</h1>
 </div>
 
 
@@ -198,15 +213,59 @@ window.Quarto = {
 </header>
 
 
-<p>Welcome to my mathematical blog.</p>
-<p>Here I write about mathematical ideas, proofs, probability theory, stochastic processes, and optimization.</p>
+<p>Explorations in <strong>interesting mathematical theorems</strong>.</p>
+<p>My goal is to make mathematical ideas approachable without sacrificing the details and subtleties that make them interesting.</p>
+<p>Some articles are introductory, while others explore more advanced topics. Whenever possible, I will highlight the necessary prerequisites and provide references for further reading.</p>
+<section id="start-here" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="start-here"><span class="header-section-number">1</span> Start Here</h2>
+<ul>
+<li><p><a href="./about.html">About This Blog</a> — Why I started writing and how I approach mathematics.</p></li>
+<li><p><a href="preliminaries.qmd"></a> — Essential foundations and background concepts.</p></li>
+</ul>
+</section>
+<section id="recent-posts" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="recent-posts"><span class="header-section-number">2</span> Recent Posts</h2>
+<div id="recent-posts">
+
+</div>
+</section>
+<section id="questions-and-corrections" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="questions-and-corrections"><span class="header-section-number">3</span> Questions and Corrections</h2>
+<p>Found a mathematical error, typo, or unclear explanation? Please <a href="https://github.com/stevenchen333/stevenchen333.github.io/issues/new">raise a GitHub Issue</a>.</p>
+<p>Questions, alternative proofs, and suggestions are always welcome!</p>
 
 
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="UmVhbCUyMEFuYWx5c2lzJTJDTnVtYmVyJTIwVGhlb3J5" data-listing-file-modified-sort="1792674958549" data-listing-reading-time-sort="1" data-listing-word-count-sort="46">
+<div class="thumbnail"><a href="./posts/Real Analysis/square_root.html" class="no-external">
 
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Real Analysis/square_root.html" class="no-external">Irrationality of Square Root</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVhbCUyMEFuYWx5c2lz'); return false;">Real Analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TnVtYmVyJTIwVGhlb3J5'); return false;">Number Theory</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/Real Analysis/square_root.html" class="no-external">
+<p>An exploration of the contraction mapping theorem.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/Real Analysis/square_root.html" class="no-external">
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->

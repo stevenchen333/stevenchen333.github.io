@@ -1,6 +1,6 @@
 
 ---
-title: "Mathematical Notes"
+title: "Theoretical"
 listing:
   contents: posts
   sort: "date desc"
@@ -9,8 +9,36 @@ listing:
   feed: true
 ---
 
-Welcome to my mathematical blog.
 
-Here I write about mathematical ideas,
-proofs, probability theory, stochastic
-processes, and optimization.
+Explorations in **interesting mathematical theorems**.
+
+My goal is to make mathematical ideas approachable
+without sacrificing the details and subtleties that
+make them interesting.
+
+Some articles are introductory, while others explore
+more advanced topics. Whenever possible, I will
+highlight the necessary prerequisites and provide
+references for further reading.
+
+## Start Here
+- [About This Blog](about.qmd) —
+  Why I started writing and how I approach mathematics.
+
+- [](preliminaries.qmd) —
+  Essential foundations and background concepts.
+
+
+
+## Recent Posts
+
+::: {#recent-posts}
+:::
+
+## Questions and Corrections
+
+Found a mathematical error, typo, or unclear explanation?
+Please [raise a GitHub Issue](https://github.com/stevenchen333/stevenchen333.github.io/issues/new).
+
+Questions, alternative proofs, and suggestions
+are always welcome!

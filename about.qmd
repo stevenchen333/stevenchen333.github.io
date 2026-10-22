@@ -1,0 +1,29 @@
+---
+title: "About"
+toc: false
+---
+
+# Why I make this blog
+
+I find *beauty in mathematics*, not only by its utility, but also on its results of theorems, lemmas, proofs, even its conjectures. An analogy I always make is that theorems and lemma are like magic tricks. The proof is teaching you how to do that magic trick! Yet, unlike most magic tricks, knowing how they work does not necessarily make them any less fascinating. Sometimes, it makes them even more beautiful.
+
+Through this blog, I want to explore mathematical theorems and results that I personally find fascinating, and hopefully share some of that fascination with others. I will also tell you why do I think it is beautiful. It might not be a very fancy results, but somehow I find it beautiful.
+## How I approach this blog
+Oftentimes, the resources I found in learning mathematic's theorems, they are too complicated and unintuitive such that it requires a lot of preliminaries that leads to rabbit holes of resources to dig, which then frequently leads to those initial excitements of learning a new concept vanish.
+
+Or it is made too shallow (usually, to reach a more general audience) but resulted in losing a lot of details and nuances that makes mathematics exciting!
+
+This blog is my attempt to find a middle ground between these two approaches. I will explain results where its shallow enough to make sure readers can follow, while at the same time, deep enough to satiate mathematician's curiosity hunger! Noting everyone's hunger level are different, I will put my resources and further readings in each post.
+
+Finally, to answer your question of "where would we use this theorem?", I will occasionally put some examples of practical usages where the concept explained is used.
+
+<!-- ## Who is this blog for?
+
+**This blog is written for anyone passionate about mathematics**. Students, practitioners, and self-learners are all welcome!
+
+Although I aim to explain concepts as comprehensively and accessibly as possible, some mathematical background is necessary. In particular, familiarity with calculus, linear algebra, and real analysis will be helpful. That said, I will try to introduce essential concepts when needed and provide references for readers who wish to strengthen their foundations.  -->
+
+## Questions, errors, and suggestions
+
+**I am in no way an expert on mathematics**. Equipped with a master's degree that involves mathematics, along with immense passion for the subject, I will try my best to make each post as accurate, as helpful as possible. If you notice any mathematical errors, typos, or unclear explanations, please [raise a GitHub Issue](https://github.com/stevenchen333/stevenchen333.github.io/issues/new). Questions, corrections, and suggestions are always welcome!
+
