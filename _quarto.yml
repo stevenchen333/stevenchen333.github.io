@@ -1,0 +1,21 @@
+
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Mathematical Notes"
+  site-url: "https://stevenchen333.github.io"
+  description: "Notes on mathematics, probability, optimization."
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+
+format:
+  html:
+    theme: litera
+    toc: true
+    number-sections: true
