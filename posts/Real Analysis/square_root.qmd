@@ -1,56 +1,81 @@
 ---
-title: "Irrationality of Square Root"
+title: "Irrationality of Square Root of 2"
 toc: true
-description: "An exploration of the contraction mapping theorem."
+description: "Simple and elegant proof"
 categories:
     - Real Analysis
-    - Number Theory
 ---
 ## Motivation
+​	This is the first theorem that hooks me into mathematics. If you are studying real analysis using Stephen Abbot's Understanding analysis {abbott2015understanding}, this is the first and foremost thing the author discusses. You might or might not be as impressed as I was when I first looked at this beauty of a proof, but mathematicians all admit that this is a beautiful proof due to its simplicity.
 
-## Theorem and Proof
+​	Although there are a handful of ways to proof it, I will provide one here that I find attractive.
 
-::: {#thm-geometric-series}
-## Geometric Series
 
-For any $r \neq 1$ and positive integer $n$,
 
-$$
-\sum_{k=0}^{n-1} r^k
-=
-\frac{1-r^n}{1-r}.
-$$
+
+::: {#thm-irrationality-square-root-2}
+
+## Irrationality of $\sqrt{2}$
+
+There is no rational number whose square is 2 [@abbott2015understanding].
+
 :::
 
 ::: {.proof}
-Let
+
+Suppose, for the sake of contradiction, that $\sqrt{2}$ is rational. Then there exist integers $p$ and $q$, with $q \neq 0$, such that
 
 $$
-S = 1+r+r^2+\cdots+r^{n-1}.
+\sqrt{2} = \frac{p}{q},
 $$
 
-Multiplying both sides by $r$ gives
+where $p$ and $q$ have no common factors other than 1. That is, the fraction $\frac{p}{q}$ is in its lowest terms.
+
+Squaring both sides, we obtain
 
 $$
-rS = r+r^2+\cdots+r^n.
+2 = \frac{p^2}{q^2},
 $$
 
-Subtracting,
+which implies
 
 $$
-(1-r)S = 1-r^n.
+p^2 = 2q^2.
 $$
 
-Since $r\neq 1$, we obtain
+Thus, $p^2$ is even. Since the square of an odd integer is odd, $p$ must also be even.
+
+Consequently, we can write $p = 2k$ for some integer $k$. Substituting this into the equation above gives
 
 $$
-S = \frac{1-r^n}{1-r}.
+(2k)^2 = 2q^2,
 $$
 
-This completes the proof.
+and hence
+
+$$
+q^2 = 2k^2.
+$$
+
+Therefore, $q^2$ is even, which implies that $q$ is also even.
+
+We have shown that both $p$ and $q$ are even. Hence, they are both divisible by 2, contradicting our assumption that $p$ and $q$ have no common factors other than 1.
+
+Therefore, our original assumption must be false, and we conclude that
+
+$$
+\boxed{\sqrt{2} \notin \mathbb{Q}.}
+$$
+
 :::
+::: {.callout-tip title="Challenge: Can We Generalize This Result?"}
 
-As established in @thm-geometric-series,
-the finite geometric series has a closed-form
-expression.
+We have shown above that $\sqrt{2}$ is irrational. But is this property unique to the number 2? We know $\sqrt{4} = 2$ so its rational. What about 3 or 5?
 
+**Challenge:** Can we generalize this result to $\sqrt{n}$ for any positive integer $n$? In other words, is the square root of every positive integer irrational?
+
+If not, under what conditions is $\sqrt{n}$ rational?
+
+**Hint:** Consider the role of evenness in our proof. Can we replace it with a more general property of integers?
+
+:::

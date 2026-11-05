@@ -1,6 +1,6 @@
 
 ---
-title: "Theoretical"
+title: "Greedy Optimizer"
 listing:
   contents: posts
   sort: "date desc"
@@ -12,9 +12,7 @@ listing:
 
 Explorations in **interesting mathematical theorems**.
 
-My goal is to make mathematical ideas approachable
-without sacrificing the details and subtleties that
-make them interesting.
+My goal is to make mathematical ideas approachable without sacrificing the details and subtleties that make them interesting!
 
 Some articles are introductory, while others explore
 more advanced topics. Whenever possible, I will

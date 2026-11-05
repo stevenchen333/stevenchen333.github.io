@@ -23,3 +23,6 @@ format:
     theme: litera
     toc: true
     number-sections: true
+
+bibliography: references.bib
+
