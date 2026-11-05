@@ -10,7 +10,7 @@
 <atom:link href="https://stevenchen333.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Notes on mathematics, probability, optimization and optimal control.</description>
 <generator>quarto-1.10.19</generator>
-<lastBuildDate>Thu, 05 Nov 2026 02:58:42 GMT</lastBuildDate>
+<lastBuildDate>Thu, 05 Nov 2026 03:07:16 GMT</lastBuildDate>
 <item>
   <title>Irrationality of Square Root of 2</title>
   <link>https://stevenchen333.github.io/posts/Real Analysis/square_root.html</link>
@@ -21,7 +21,7 @@
 
 <section id="motivation" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">1</span> Motivation</h2>
-<p>​ This is the first theorem that hooks me into mathematics. If you are studying real analysis using Stephen Abbot’s Understanding analysis [abbott2015understandin], this is the first and foremost thing the author discusses. You might or might not be as impressed as I was when I first looked at this beauty of a proof, but mathematicians all admit that this is a beautiful proof due to its simplicity.</p>
+<p>​ This is the first theorem that hooks me into mathematics. If you are studying real analysis using Stephen Abbot’s Understanding analysis [abbott2015understanding], this is the first and foremost thing the author discusses. You might or might not be as impressed as I was when I first looked at this beauty of a proof, but mathematicians all admit that this is a beautiful proof due to its simplicity.</p>
 <p>​ Although there are a handful of ways to proof it, I will provide one here that I find attractive.</p>
 <div id="thm-irrationality-square-root-2" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1 (Irrationality of <img src="https://latex.codecogs.com/png.latex?%5Csqrt%7B2%7D">)</strong></span> There is no rational number whose square is 2 <span class="citation" data-cites="abbott2015understanding">(Abbott 2015)</span>.</p>
@@ -72,7 +72,7 @@ Abbott, Stephen. 2015. <em>Understanding Analysis</em>. 2nd ed. Undergraduate Te
 </div></section></div> ]]></description>
   <category>Real Analysis</category>
   <guid>https://stevenchen333.github.io/posts/Real Analysis/square_root.html</guid>
-  <pubDate>Thu, 05 Nov 2026 02:58:42 GMT</pubDate>
+  <pubDate>Thu, 05 Nov 2026 03:07:16 GMT</pubDate>
 </item>
 </channel>
 </rss>
