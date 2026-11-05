@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="An exploration of the contraction mapping theorem.">
+<meta name="description" content="Simple and elegant proof">
 
-<title>Irrationality of Square Root – Greedy Optimizer</title>
+<title>Irrationality of Square Root of 2 – Greedy Optimizer</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,7 +27,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -156,7 +175,6 @@ window.Quarto = {
    
   <ul>
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">1</span> Motivation</a></li>
-  <li><a href="#theorem-and-proof" id="toc-theorem-and-proof" class="nav-link" data-scroll-target="#theorem-and-proof"><span class="header-section-number">2</span> Theorem and Proof</a></li>
   </ul>
 </nav>
     </div>
@@ -165,16 +183,15 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Irrationality of Square Root</h1>
+<h1 class="title">Irrationality of Square Root of 2</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Real Analysis</div>
-    <div class="quarto-category">Number Theory</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    An exploration of the contraction mapping theorem.
+    Simple and elegant proof
   </div>
 </div>
 
@@ -193,42 +210,67 @@ window.Quarto = {
 
 <section id="motivation" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">1</span> Motivation</h2>
-</section>
-<section id="theorem-and-proof" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="theorem-and-proof"><span class="header-section-number">2</span> Theorem and Proof</h2>
-<div id="thm-geometric-series" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Geometric Series)</strong></span> For any <span class="math inline">\(r \neq 1\)</span> and positive integer <span class="math inline">\(n\)</span>,</p>
-<p><span class="math display">\[
-\sum_{k=0}^{n-1} r^k
-=
-\frac{1-r^n}{1-r}.
-\]</span></p>
+<p>​ This is the first theorem that hooks me into mathematics. If you are studying real analysis using Stephen Abbot’s Understanding analysis {abbott2015understanding}, this is the first and foremost thing the author discusses. You might or might not be as impressed as I was when I first looked at this beauty of a proof, but mathematicians all admit that this is a beautiful proof due to its simplicity.</p>
+<p>​ Although there are a handful of ways to proof it, I will provide one here that I find attractive.</p>
+<div id="thm-irrationality-square-root-2" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Irrationality of <span class="math inline">\(\sqrt{2}\)</span>)</strong></span> There is no rational number whose square is 2 <span class="citation" data-cites="abbott2015understanding">(<a href="#ref-abbott2015understanding" role="doc-biblioref">Abbott 2015</a>)</span>.</p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Let</p>
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose, for the sake of contradiction, that <span class="math inline">\(\sqrt{2}\)</span> is rational. Then there exist integers <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, with <span class="math inline">\(q \neq 0\)</span>, such that</p>
 <p><span class="math display">\[
-S = 1+r+r^2+\cdots+r^{n-1}.
+\sqrt{2} = \frac{p}{q},
 \]</span></p>
-<p>Multiplying both sides by <span class="math inline">\(r\)</span> gives</p>
+<p>where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> have no common factors other than 1. That is, the fraction <span class="math inline">\(\frac{p}{q}\)</span> is in its lowest terms.</p>
+<p>Squaring both sides, we obtain</p>
 <p><span class="math display">\[
-rS = r+r^2+\cdots+r^n.
+2 = \frac{p^2}{q^2},
 \]</span></p>
-<p>Subtracting,</p>
+<p>which implies</p>
 <p><span class="math display">\[
-(1-r)S = 1-r^n.
+p^2 = 2q^2.
 \]</span></p>
-<p>Since <span class="math inline">\(r\neq 1\)</span>, we obtain</p>
+<p>Thus, <span class="math inline">\(p^2\)</span> is even. Since the square of an odd integer is odd, <span class="math inline">\(p\)</span> must also be even.</p>
+<p>Consequently, we can write <span class="math inline">\(p = 2k\)</span> for some integer <span class="math inline">\(k\)</span>. Substituting this into the equation above gives</p>
 <p><span class="math display">\[
-S = \frac{1-r^n}{1-r}.
+(2k)^2 = 2q^2,
 \]</span></p>
-<p>This completes the proof.</p>
+<p>and hence</p>
+<p><span class="math display">\[
+q^2 = 2k^2.
+\]</span></p>
+<p>Therefore, <span class="math inline">\(q^2\)</span> is even, which implies that <span class="math inline">\(q\)</span> is also even.</p>
+<p>We have shown that both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are even. Hence, they are both divisible by 2, contradicting our assumption that <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> have no common factors other than 1.</p>
+<p>Therefore, our original assumption must be false, and we conclude that</p>
+<p><span class="math display">\[
+\boxed{\sqrt{2} \notin \mathbb{Q}.}
+\]</span></p>
 </div>
-<p>As established in <a href="#thm-geometric-series" class="quarto-xref">Theorem&nbsp;1</a>, the finite geometric series has a closed-form expression.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Challenge: Can We Generalize This Result?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Challenge: Can We Generalize This Result?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We have shown above that <span class="math inline">\(\sqrt{2}\)</span> is irrational. But is this property unique to the number 2? We know <span class="math inline">\(\sqrt{4} = 2\)</span> so its rational. What about 3 or 5?</p>
+<p><strong>Challenge:</strong> Can we generalize this result to <span class="math inline">\(\sqrt{n}\)</span> for any positive integer <span class="math inline">\(n\)</span>? In other words, is the square root of every positive integer irrational?</p>
+<p>If not, under what conditions is <span class="math inline">\(\sqrt{n}\)</span> rational?</p>
+<p><strong>Hint:</strong> Consider the role of evenness in our proof. Can we replace it with a more general property of integers?</p>
+</div>
+</div>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-abbott2015understanding" class="csl-entry" role="listitem">
+Abbott, Stephen. 2015. <em>Understanding Analysis</em>. 2nd ed. Undergraduate Texts in Mathematics. Springer. <a href="https://doi.org/10.1007/978-1-4939-2712-8">https://doi.org/10.1007/978-1-4939-2712-8</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
