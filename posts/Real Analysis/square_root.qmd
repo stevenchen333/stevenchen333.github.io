@@ -6,7 +6,7 @@ categories:
     - Real Analysis
 ---
 ## Motivation
-​	This is the first theorem that hooks me into mathematics. If you are studying real analysis using Stephen Abbot's Understanding analysis [abbott2015understanding], this is the first and foremost thing the author discusses. You might or might not be as impressed as I was when I first looked at this beauty of a proof, but mathematicians all admit that this is a beautiful proof due to its simplicity.
+​	This is the first theorem that hooks me into mathematics. If you are studying real analysis using Stephen Abbot's Understanding analysis [@abbott2015understanding], this is the first and foremost thing the author discusses. You might or might not be as impressed as I was when I first looked at this beauty of a proof, but mathematicians all admit that this is a beautiful proof due to its simplicity.
 
 ​	Although there are a handful of ways to proof it, I will provide one here that I find attractive.
 
