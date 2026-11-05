@@ -10,7 +10,7 @@
 <atom:link href="https://stevenchen333.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Notes on mathematics, probability, optimization and optimal control.</description>
 <generator>quarto-1.10.19</generator>
-<lastBuildDate>Thu, 05 Nov 2026 02:41:32 GMT</lastBuildDate>
+<lastBuildDate>Thu, 05 Nov 2026 02:58:42 GMT</lastBuildDate>
 <item>
   <title>Irrationality of Square Root of 2</title>
   <link>https://stevenchen333.github.io/posts/Real Analysis/square_root.html</link>
@@ -72,7 +72,7 @@ Abbott, Stephen. 2015. <em>Understanding Analysis</em>. 2nd ed. Undergraduate Te
 </div></section></div> ]]></description>
   <category>Real Analysis</category>
   <guid>https://stevenchen333.github.io/posts/Real Analysis/square_root.html</guid>
-  <pubDate>Thu, 05 Nov 2026 02:41:32 GMT</pubDate>
+  <pubDate>Thu, 05 Nov 2026 02:58:42 GMT</pubDate>
 </item>
 </channel>
 </rss>

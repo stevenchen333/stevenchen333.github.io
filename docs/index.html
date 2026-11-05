@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-recent-posts .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-recent-posts'] = new List('listing-recent-posts', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -224,20 +224,7 @@ window.Quarto = {
 </section>
 <section id="recent-posts" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="recent-posts"><span class="header-section-number">2</span> Recent Posts</h2>
-<div id="recent-posts">
-
-</div>
-</section>
-<section id="questions-and-corrections" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="questions-and-corrections"><span class="header-section-number">3</span> Questions and Corrections</h2>
-<p>Found a mathematical error, typo, or unclear explanation? Please <a href="https://github.com/stevenchen333/stevenchen333.github.io/issues/new">raise a GitHub Issue</a>.</p>
-<p>Questions, alternative proofs, and suggestions are always welcome!</p>
-
-
-
-</section>
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div id="listing-recent-posts" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-categories="UmVhbCUyMEFuYWx5c2lz" data-listing-file-modified-sort="1793846460056" data-listing-reading-time-sort="2" data-listing-word-count-sort="329">
 <div class="thumbnail"><a href="./posts/Real Analysis/square_root.html" class="no-external">
@@ -265,7 +252,18 @@ window.Quarto = {
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+</section>
+<section id="questions-and-corrections" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="questions-and-corrections"><span class="header-section-number">3</span> Questions and Corrections</h2>
+<p>Found a mathematical error, typo, or unclear explanation? Please <a href="https://github.com/stevenchen333/stevenchen333.github.io/issues/new">raise a GitHub Issue</a>.</p>
+<p>Questions, alternative proofs, and suggestions are always welcome!</p>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

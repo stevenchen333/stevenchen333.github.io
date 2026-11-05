@@ -2,6 +2,7 @@
 ---
 title: "Greedy Optimizer"
 listing:
+  id: recent-posts
   contents: posts
   sort: "date desc"
   type: default
@@ -9,20 +10,15 @@ listing:
   feed: true
 ---
 
-
 Explorations in **interesting mathematical theorems**.
 
 My goal is to make mathematical ideas approachable without sacrificing the details and subtleties that make them interesting!
 
-Some articles are introductory, while others explore
-more advanced topics. Whenever possible, I will
-highlight the necessary prerequisites and provide
-references for further reading.
+Some articles are introductory, while others explore more advanced topics. Whenever possible, I will highlight the necessary prerequisites and provide references for further reading.
 
 ## Start Here
-- [About This Blog](about.qmd) —
-  Why I started writing and how I approach mathematics.
 
+- [About This Blog](about.qmd) — Why I started writing and how I approach mathematics.
 
 ## Recent Posts
 
@@ -31,8 +27,6 @@ references for further reading.
 
 ## Questions and Corrections
 
-Found a mathematical error, typo, or unclear explanation?
-Please [raise a GitHub Issue](https://github.com/stevenchen333/stevenchen333.github.io/issues/new).
+Found a mathematical error, typo, or unclear explanation? Please [raise a GitHub Issue](https://github.com/stevenchen333/stevenchen333.github.io/issues/new).
 
-Questions, alternative proofs, and suggestions
-are always welcome!
+Questions, alternative proofs, and suggestions are always welcome!
