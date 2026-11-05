@@ -1,7 +1,7 @@
 ---
 title: "Irrationality of Square Root of 2"
 toc: true
-description: "Simple and elegant proof"
+description: "First proof I fell in love with"
 categories:
     - Real Analysis
 ---
