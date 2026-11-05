@@ -23,10 +23,6 @@ references for further reading.
 - [About This Blog](about.qmd) —
   Why I started writing and how I approach mathematics.
 
-- [](preliminaries.qmd) —
-  Essential foundations and background concepts.
-
-
 
 ## Recent Posts
 
