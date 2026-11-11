@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Real Analysis/cantor_diagonal.html",
       "/posts/Real Analysis/square_root.html"
     ]
   }
