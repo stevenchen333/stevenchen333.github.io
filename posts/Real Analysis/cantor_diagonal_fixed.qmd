@@ -26,22 +26,28 @@ In learning calculus, usually, the results we use are pretty intuitive. Derivati
 
 We begin with some definitions. Let $X$ and $Y$ be two arbitrary sets.
 
-This motivates us to introduce the notions of injectivity, surjectivity, and bijectivity. \::: {#def-injective-surjective-bijective} \## Injectivity, Surjectivity, Bijectivity [@schilling2017measures]
+This motivates us to introduce the notions of injectivity, surjectivity, and bijectivity.
+
+::: {#def-injective-surjective-bijective}
+## Injectivity, Surjectivity, Bijectivity [@schilling2017measures]
 
 A map $f: X \to Y$ is called
 
 $$
+\begin{aligned}
 \text{Injective (one-to-one)} \iff f(x) = f(x') \text{ implies } x = x', \\
 \text{Surjective (onto)} \iff f(X) := \{f(x) \in Y : x \in X\} = Y,  \\
 \text{Bijective} \iff f \text{ is injective and surjective.}
+\end{aligned}
 $$
 
-![Illustrations of injective, surjective, and bijective mappings. Source: Musical Inquisit (2020), Wikimedia Commons, CC BY-SA 4.0.](https://upload.wikimedia.org/wikipedia/commons/4/43/Injective%2C_Surjective%2C_Bijective.svg){#fig-function-mappings width="85%"} \:::
+![Illustrations of injective, surjective, and bijective mappings. Source: Musical Inquisit (2020), Wikimedia Commons, CC BY-SA 4.0.](https://upload.wikimedia.org/wikipedia/commons/4/43/Injective%2C_Surjective%2C_Bijective.svg){#fig-function-mappings width="85%"}
+:::
 
-The **cardinality** of a set $X$, denoted by $#X$, describes the *number of elements* in $X$. For finite sets, this is simply the number of distinct elements. However, when dealing with infinite sets, the notion of counting becomes less straightforward. Instead, we compare the sizes of sets through *one-to-one correspondences*.
+The **cardinality** of a set $X$, denoted by $\#X$, describes the *number of elements* in $X$. For finite sets, this is simply the number of distinct elements. However, when dealing with infinite sets, the notion of counting becomes less straightforward. Instead, we compare the sizes of sets through *one-to-one correspondences*.
 
 In particular, we say that two sets $X$ and $Y$ have the **same cardinality**, written as $$
-#X=#Y,
+\#X=\#Y,
 $$ if there exists a bijection $f:X\to Y$.
 
 To get some more intuition about cardinality, we present one example by using the aforementioned Galileo's paradox.
@@ -104,7 +110,8 @@ We formalize these notions in the following definition.
 ::: {#def-countable}
 ## Countable and Uncountable Sets
 
-A set $X$ is called **countably infinite** if there exists a bijection $$
+A set $X$ is called **countably infinite** if there exists a bijection 
+$$
 f:\mathbb{N}\to X.
 $$
 
@@ -122,7 +129,7 @@ Remarkably, the answer is **no**. Cantor's diagonal argument demonstrates that t
 ::: {#thm-cantor-diagonal}
 **Cantor's Diagonal Argument.**
 
-The set of real numbers in the interval $(0,1)$ is uncountable. That is, there exists no bijection between $\mathbb{N}$ and $(0,1)$. $#(0,1)$ is called the *continuum*.
+The set of real numbers in the interval $(0,1)$ is uncountable. That is, there exists no bijection between $\mathbb{N}$ and $(0,1)$. $\#(0,1)$ is called the *continuum*.
 :::
 
 ::: proof
@@ -161,7 +168,8 @@ In particular:
 - $y\neq x_3$, since their third decimal digits differ.
 - And so on.
 
-Consequently, $$
+Consequently, 
+$$
 y\neq x_n,\qquad \forall n\in\mathbb{N}.
 $$
 

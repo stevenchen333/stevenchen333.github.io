@@ -219,17 +219,30 @@ window.Quarto = {
 <p>One of the most elegant demonstrations of this discovery is <strong>Cantor’s diagonal argument</strong>.</p>
 <p>In learning calculus, usually, the results we use are pretty intuitive. Derivative is instantaneous rate of change, and integral is the area under the curve. But we take for granted, often unknowingly, the assumptions needed for these results to hold. In beginning to study real analysis, we are taught to fortify our intuition and our way of thinking, by generalizing (relaxing assumptions), abstracting, questioning everything we learnt in calculus courses. We begin to realize, the assumptions we made in prior mathematical courses were very strong assumptions to be made. And as we begin to question ideas we once took for granted, we encounter mathematical results that challenge not only our intuition, but also our understanding of seemingly simple concepts. Cantor’s diagonal argument is the first proof that excites me because of how absurd, to a layman, the claim is. Then we are brought into the journey of the proof and realize how ingenious and beautiful the proof is.</p>
 <p>We begin with some definitions. Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two arbitrary sets.</p>
-<p>This motivates us to introduce the notions of injectivity, surjectivity, and bijectivity. ::: {#def-injective-surjective-bijective} ## Injectivity, Surjectivity, Bijectivity <span class="citation" data-cites="schilling2017measures">(<a href="#ref-schilling2017measures" role="doc-biblioref">Schilling 2017</a>)</span></p>
-<p>A map <span class="math inline">\(f: X \to Y\)</span> is called</p>
+<p>This motivates us to introduce the notions of injectivity, surjectivity, and bijectivity.</p>
+<div id="def-injective-surjective-bijective" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Injectivity, Surjectivity, Bijectivity <span class="citation" data-cites="schilling2017measures">(<a href="#ref-schilling2017measures" role="doc-biblioref">Schilling 2017</a>)</span>)</strong></span> A map <span class="math inline">\(f: X \to Y\)</span> is called</p>
 <p><span class="math display">\[
+\begin{aligned}
 \text{Injective (one-to-one)} \iff f(x) = f(x') \text{ implies } x = x', \\
 \text{Surjective (onto)} \iff f(X) := \{f(x) \in Y : x \in X\} = Y,  \\
 \text{Bijective} \iff f \text{ is injective and surjective.}
+\end{aligned}
 \]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Injective%2C_Surjective%2C_Bijective.svg" id="fig-function-mappings" class="img-fluid" style="width:85.0%" alt="Illustrations of injective, surjective, and bijective mappings. Source: Musical Inquisit (2020), Wikimedia Commons, CC BY-SA 4.0."> :::</p>
-<p>The <strong>cardinality</strong> of a set <span class="math inline">\(X\)</span>, denoted by <span class="math inline">\(#X\)</span>, describes the <em>number of elements</em> in <span class="math inline">\(X\)</span>. For finite sets, this is simply the number of distinct elements. However, when dealing with infinite sets, the notion of counting becomes less straightforward. Instead, we compare the sizes of sets through <em>one-to-one correspondences</em>.</p>
+<div id="fig-function-mappings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-function-mappings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Injective%2C_Surjective%2C_Bijective.svg" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-function-mappings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Illustrations of injective, surjective, and bijective mappings. Source: Musical Inquisit (2020), Wikimedia Commons, CC BY-SA 4.0.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The <strong>cardinality</strong> of a set <span class="math inline">\(X\)</span>, denoted by <span class="math inline">\(\#X\)</span>, describes the <em>number of elements</em> in <span class="math inline">\(X\)</span>. For finite sets, this is simply the number of distinct elements. However, when dealing with infinite sets, the notion of counting becomes less straightforward. Instead, we compare the sizes of sets through <em>one-to-one correspondences</em>.</p>
 <p>In particular, we say that two sets <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have the <strong>same cardinality</strong>, written as <span class="math display">\[
-#X=#Y,
+\#X=\#Y,
 \]</span> if there exists a bijection <span class="math inline">\(f:X\to Y\)</span>.</p>
 <p>To get some more intuition about cardinality, we present one example by using the aforementioned Galileo’s paradox.</p>
 <div id="exm-galileos-paradox" class="theorem example">
@@ -273,7 +286,7 @@ x_1,x_2,x_3,\ldots
 <p>Such a set is called <strong>uncountable</strong>.</p>
 <p>We formalize these notions in the following definition.</p>
 <div id="def-countable" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Countable and Uncountable Sets)</strong></span> A set <span class="math inline">\(X\)</span> is called <strong>countably infinite</strong> if there exists a bijection <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 2 (Countable and Uncountable Sets)</strong></span> A set <span class="math inline">\(X\)</span> is called <strong>countably infinite</strong> if there exists a bijection <span class="math display">\[
 f:\mathbb{N}\to X.
 \]</span></p>
 <p>A set is called <strong>countable</strong> if it is either finite or countably infinite.</p>
@@ -284,7 +297,7 @@ f:\mathbb{N}\to X.
 <p>Remarkably, the answer is <strong>no</strong>. Cantor’s diagonal argument demonstrates that the real numbers in the interval <span class="math inline">\((0,1)\)</span> cannot be enumerated, no matter how cleverly we attempt to arrange them.</p>
 <div id="thm-cantor-diagonal" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1</strong></span> <strong>Cantor’s Diagonal Argument.</strong></p>
-<p>The set of real numbers in the interval <span class="math inline">\((0,1)\)</span> is uncountable. That is, there exists no bijection between <span class="math inline">\(\mathbb{N}\)</span> and <span class="math inline">\((0,1)\)</span>. <span class="math inline">\(#(0,1)\)</span> is called the <em>continuum</em>.</p>
+<p>The set of real numbers in the interval <span class="math inline">\((0,1)\)</span> is uncountable. That is, there exists no bijection between <span class="math inline">\(\mathbb{N}\)</span> and <span class="math inline">\((0,1)\)</span>. <span class="math inline">\(\#(0,1)\)</span> is called the <em>continuum</em>.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>We proceed by contradiction.</p>
@@ -356,7 +369,7 @@ y\neq x_n,\qquad \forall n\in\mathbb{N}.
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-schilling2017measures" class="csl-entry" role="listitem">
-Schilling, R. L. 2017. <em>Measures, Integrals and Martingales</em>. Measures, Integrals and Martingales. Cambridge University Press. <a href="https://books.google.co.id/books?id=sdAoDwAAQBAJ">https://books.google.co.id/books?id=sdAoDwAAQBAJ</a>.
+Schilling, R. L. 2017. <em>Measures, Integrals and Martingales</em>. Measures, Integrals and Martingales. Cambridge University Press.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
