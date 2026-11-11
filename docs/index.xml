@@ -10,7 +10,7 @@
 <atom:link href="https://stevenchen333.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Notes on mathematics, probability, optimization and optimal control.</description>
 <generator>quarto-1.10.19</generator>
-<lastBuildDate>Wed, 11 Nov 2026 07:39:06 GMT</lastBuildDate>
+<lastBuildDate>Wed, 11 Nov 2026 07:42:10 GMT</lastBuildDate>
 <item>
   <title>Irrationality of Square Root of 2</title>
   <link>https://stevenchen333.github.io/posts/Real Analysis/square_root.html</link>
@@ -72,7 +72,7 @@ Abbott, Stephen. 2015. <em>Understanding Analysis</em>. 2nd ed. Undergraduate Te
 </div></section></div> ]]></description>
   <category>Real Analysis</category>
   <guid>https://stevenchen333.github.io/posts/Real Analysis/square_root.html</guid>
-  <pubDate>Wed, 11 Nov 2026 07:39:06 GMT</pubDate>
+  <pubDate>Wed, 11 Nov 2026 07:42:10 GMT</pubDate>
 </item>
 <item>
   <title>Cantor’s Diagonal Theorem</title>
@@ -93,7 +93,6 @@ Abbott, Stephen. 2015. <em>Understanding Analysis</em>. 2nd ed. Undergraduate Te
 <p>One of the most elegant demonstrations of this discovery is <strong>Cantor’s diagonal argument</strong>.</p>
 <p>In learning calculus, usually, the results we use are pretty intuitive. Derivative is instantaneous rate of change, and integral is the area under the curve. But we take for granted, often unknowingly, the assumptions needed for these results to hold. In beginning to study real analysis, we are taught to fortify our intuition and our way of thinking, by generalizing (relaxing assumptions), abstracting, questioning everything we learnt in calculus courses. We begin to realize, the assumptions we made in prior mathematical courses were very strong assumptions to be made. And as we begin to question ideas we once took for granted, we encounter mathematical results that challenge not only our intuition, but also our understanding of seemingly simple concepts. Cantor’s diagonal argument is the first proof that excites me because of how absurd, to a layman, the claim is. Then we are brought into the journey of the proof and realize how ingenious and beautiful the proof is.</p>
 <p>We begin with some definitions. Let <img src="https://latex.codecogs.com/png.latex?X"> and <img src="https://latex.codecogs.com/png.latex?Y"> be two arbitrary sets.</p>
-<p>This motivates us to introduce the notions of injectivity, surjectivity, and bijectivity.</p>
 <div id="def-injective-surjective-bijective" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1 (Injectivity, Surjectivity, Bijectivity <span class="citation" data-cites="schilling2017measures">(Schilling 2017)</span>)</strong></span> A map <img src="https://latex.codecogs.com/png.latex?f:%20X%20%5Cto%20Y"> is called</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Ctext%7BInjective%20(one-to-one)%7D%20%5Ciff%20f(x)%20=%20f(x')%20%5Ctext%7B%20implies%20%7D%20x%20=%20x',%20%5C%5C%0A%5Ctext%7BSurjective%20(onto)%7D%20%5Ciff%20f(X)%20:=%20%5C%7Bf(x)%20%5Cin%20Y%20:%20x%20%5Cin%20X%5C%7D%20=%20Y,%20%20%5C%5C%0A%5Ctext%7BBijective%7D%20%5Ciff%20f%20%5Ctext%7B%20is%20injective%20and%20surjective.%7D%0A%5Cend%7Baligned%7D%0A"></p>
@@ -194,7 +193,7 @@ Schilling, R. L. 2017. <em>Measures, Integrals and Martingales</em>. Measures, I
 </div></section></div> ]]></description>
   <category>Real Analysis</category>
   <guid>https://stevenchen333.github.io/posts/Real Analysis/cantor_diagonal_fixed.html</guid>
-  <pubDate>Wed, 11 Nov 2026 07:39:06 GMT</pubDate>
+  <pubDate>Wed, 11 Nov 2026 07:42:10 GMT</pubDate>
 </item>
 </channel>
 </rss>

@@ -26,7 +26,6 @@ In learning calculus, usually, the results we use are pretty intuitive. Derivati
 
 We begin with some definitions. Let $X$ and $Y$ be two arbitrary sets.
 
-This motivates us to introduce the notions of injectivity, surjectivity, and bijectivity.
 
 ::: {#def-injective-surjective-bijective}
 ## Injectivity, Surjectivity, Bijectivity [@schilling2017measures]
